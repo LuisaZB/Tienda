@@ -12,3 +12,45 @@
 h1{
     background-color: beige;
 }
+
+a:link{
+    color: darkorange;
+}
+
+/*para los links ya visitados*/
+a:visited{
+    color: aqua;
+}
+
+/*cuando se posiciona encima de el*/
+a:hover{
+    transition: 1s;
+    color: white;
+    background-color: black;
+    border-radius: 25px
+}
+
+/*cuando lo presiona cambia*/
+a:active{
+    color: white;
+    background-color: red;
+}
+
+/*p:nth-child(2){
+    
+    background-color: blanchedalmond;
+    
+}*/
+
+p:nth-child(odd){
+    
+    background-color: bisque;
+    
+}
+
+p:nth-child(even){
+    
+    background-color: blanchedalmond;
+    
+}
+
