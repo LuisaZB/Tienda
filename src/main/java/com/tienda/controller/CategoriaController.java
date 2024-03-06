@@ -26,7 +26,7 @@ public class CategoriaController {
     public String listado(Model model) {
         List<Categoria> lista = categoriaService.getCategorias(false);
         model.addAttribute("categorias", lista);
-        model.addAttribute("totalcategorias", lista.size());
+        model.addAttribute("totalCategorias", lista.size());
         return "/categoria/listado";
     }
     @GetMapping("/nuevo")
