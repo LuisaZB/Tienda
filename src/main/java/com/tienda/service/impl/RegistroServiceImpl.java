@@ -27,6 +27,9 @@ public class RegistroServiceImpl implements RegistroService {
     @Autowired
     private FirebaseStorageServiceImpl firebaseStorageService;
 
+    
+    //Método que es llamado al dar click en el link del correo
+    //Muestra una vista para complementar el proceso de activación
     @Override
     public Model activar(Model model, String username, String clave) {
         Usuario usuario = 
@@ -49,10 +52,12 @@ public class RegistroServiceImpl implements RegistroService {
         return model;
     }
 
+    //Método al darle sumit el activar
     @Override
     public void activar(Usuario usuario, MultipartFile imagenFile) {
         var codigo = new BCryptPasswordEncoder();
         usuario.setPassword(codigo.encode(usuario.getPassword()));
+        usuario.setActivo(true);
 
         if (!imagenFile.isEmpty()) {
             usuarioService.save(usuario, false);
